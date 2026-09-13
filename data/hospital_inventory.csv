@@ -1,0 +1,61 @@
+hospital_id,hospital_name,location,medicine_id,medicine_name,current_stock,daily_usage,lead_time_days,unit_price
+H001,Northstar General Hospital,Northbridge,M001,Paracetamol 500mg,420,38,5,0.12
+H001,Northstar General Hospital,Northbridge,M002,Amoxicillin 250mg,180,22,7,0.28
+H002,Riverbend Medical Center,Riverbend,M003,Insulin Regular 100IU,48,12,10,4.75
+H002,Riverbend Medical Center,Riverbend,M004,Ceftriaxone 1g,310,18,6,1.85
+H003,Silver Oak Hospital,Silver Oak,M005,Azithromycin 500mg,35,16,8,0.92
+H003,Silver Oak Hospital,Silver Oak,M006,Salbutamol Inhaler,260,14,5,2.40
+H004,Meadowline District Hospital,Meadowline,M007,Metformin 500mg,610,34,9,0.16
+H004,Meadowline District Hospital,Meadowline,M008,Amlodipine 5mg,95,20,6,0.10
+H005,Suncrest Care Hospital,Suncrest,M009,Atorvastatin 20mg,510,18,12,0.22
+H005,Suncrest Care Hospital,Suncrest,M010,Omeprazole 20mg,42,19,7,0.14
+H006,Pineview Community Hospital,Pineview,M011,Artemether Lumefantrine,75,11,8,1.60
+H006,Pineview Community Hospital,Pineview,M012,Oral Rehydration Salts,900,45,4,0.08
+H007,Lakeside Memorial Hospital,Lakeside,M013,Enoxaparin 40mg,22,9,10,3.20
+H007,Lakeside Memorial Hospital,Lakeside,M014,Morphine 10mg,68,5,14,1.10
+H008,Cedar Valley Hospital,Cedar Valley,M015,Amoxicillin Clavulanate 625mg,240,20,7,0.70
+H008,Cedar Valley Hospital,Cedar Valley,M001,Paracetamol 500mg,980,30,5,0.12
+H009,Eastgate Medical Institute,Eastgate,M002,Amoxicillin 250mg,520,17,7,0.28
+H009,Eastgate Medical Institute,Eastgate,M003,Insulin Regular 100IU,130,8,10,4.75
+H010,Willowbrook General Hospital,Willowbrook,M004,Ceftriaxone 1g,58,15,6,1.85
+H010,Willowbrook General Hospital,Willowbrook,M005,Azithromycin 500mg,275,12,8,0.92
+H011,Harborlight Hospital,Harborlight,M006,Salbutamol Inhaler,44,13,5,2.40
+H011,Harborlight Hospital,Harborlight,M007,Metformin 500mg,420,27,9,0.16
+H012,Greenfield Regional Hospital,Greenfield,M008,Amlodipine 5mg,360,16,6,0.10
+H012,Greenfield Regional Hospital,Greenfield,M009,Atorvastatin 20mg,68,15,12,0.22
+H013,Maple Cross Hospital,Maple Cross,M010,Omeprazole 20mg,300,21,7,0.14
+H013,Maple Cross Hospital,Maple Cross,M011,Artemether Lumefantrine,41,10,8,1.60
+H014,Bluebell Medical Center,Bluebell,M012,Oral Rehydration Salts,210,39,4,0.08
+H014,Bluebell Medical Center,Bluebell,M013,Enoxaparin 40mg,170,7,10,3.20
+H015,Stonebridge Hospital,Stonebridge,M014,Morphine 10mg,19,4,14,1.10
+H015,Stonebridge Hospital,Stonebridge,M015,Amoxicillin Clavulanate 625mg,450,16,7,0.70
+H016,Golden Fern Hospital,Golden Fern,M001,Paracetamol 500mg,75,31,5,0.12
+H016,Golden Fern Hospital,Golden Fern,M002,Amoxicillin 250mg,390,19,7,0.28
+H017,Redwood District Hospital,Redwood,M003,Insulin Regular 100IU,24,10,10,4.75
+H017,Redwood District Hospital,Redwood,M004,Ceftriaxone 1g,500,17,6,1.85
+H018,Clearwater General Hospital,Clearwater,M005,Azithromycin 500mg,340,14,8,0.92
+H018,Clearwater General Hospital,Clearwater,M006,Salbutamol Inhaler,88,12,5,2.40
+H019,Highland Mercy Hospital,Highland,M007,Metformin 500mg,740,29,9,0.16
+H019,Highland Mercy Hospital,Highland,M008,Amlodipine 5mg,410,18,6,0.10
+H020,Parkview Medical Center,Parkview,M009,Atorvastatin 20mg,55,17,12,0.22
+H020,Parkview Medical Center,Parkview,M010,Omeprazole 20mg,460,20,7,0.14
+H021,Brightwell Hospital,Brightwell,M011,Artemether Lumefantrine,230,12,8,1.60
+H021,Brightwell Hospital,Brightwell,M012,Oral Rehydration Salts,66,41,4,0.08
+H022,Oakridge Community Hospital,Oakridge,M013,Enoxaparin 40mg,190,8,10,3.20
+H022,Oakridge Community Hospital,Oakridge,M014,Morphine 10mg,105,5,14,1.10
+H023,Westhaven Hospital,Westhaven,M015,Amoxicillin Clavulanate 625mg,39,18,7,0.70
+H023,Westhaven Hospital,Westhaven,M001,Paracetamol 500mg,530,33,5,0.12
+H024,Springvale Medical Center,Springvale,M002,Amoxicillin 250mg,62,24,7,0.28
+H024,Springvale Medical Center,Springvale,M003,Insulin Regular 100IU,145,9,10,4.75
+H025,Elmwood General Hospital,Elmwood,M004,Ceftriaxone 1g,275,20,6,1.85
+H025,Elmwood General Hospital,Elmwood,M005,Azithromycin 500mg,610,13,8,0.92
+H026,Coralcrest Hospital,Coralcrest,M006,Salbutamol Inhaler,315,15,5,2.40
+H026,Coralcrest Hospital,Coralcrest,M007,Metformin 500mg,85,30,9,0.16
+H027,Juniper Hill Hospital,Juniper Hill,M008,Amlodipine 5mg,280,19,6,0.10
+H027,Juniper Hill Hospital,Juniper Hill,M009,Atorvastatin 20mg,470,16,12,0.22
+H028,Southgate Medical Center,Southgate,M010,Omeprazole 20mg,31,18,7,0.14
+H028,Southgate Medical Center,Southgate,M011,Artemether Lumefantrine,320,9,8,1.60
+H029,Marigold Hospital,Marigold,M012,Oral Rehydration Salts,780,44,4,0.08
+H029,Marigold Hospital,Marigold,M013,Enoxaparin 40mg,27,8,10,3.20
+H030,Westfield Regional Hospital,Westfield,M014,Morphine 10mg,82,4,14,1.10
+H030,Westfield Regional Hospital,Westfield,M015,Amoxicillin Clavulanate 625mg,265,21,7,0.70

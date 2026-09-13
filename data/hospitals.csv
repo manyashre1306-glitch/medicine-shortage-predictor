@@ -1,0 +1,31 @@
+hospital_id,hospital_name,location,latitude,longitude
+H001,Northstar General Hospital,Northbridge,12.9716,77.5946
+H002,Riverbend Medical Center,Riverbend,12.9352,77.6245
+H003,Silver Oak Hospital,Silver Oak,13.0068,77.5619
+H004,Meadowline District Hospital,Meadowline,12.9141,77.6387
+H005,Suncrest Care Hospital,Suncrest,12.9864,77.5482
+H006,Pineview Community Hospital,Pineview,13.0297,77.5891
+H007,Lakeside Memorial Hospital,Lakeside,12.9568,77.6654
+H008,Cedar Valley Hospital,Cedar Valley,12.9025,77.5813
+H009,Eastgate Medical Institute,Eastgate,13.0182,77.6468
+H010,Willowbrook General Hospital,Willowbrook,12.9487,77.5326
+H011,Harborlight Hospital,Harborlight,12.8879,77.6174
+H012,Greenfield Regional Hospital,Greenfield,13.0451,77.6218
+H013,Maple Cross Hospital,Maple Cross,12.9256,77.5712
+H014,Bluebell Medical Center,Bluebell,12.9812,77.6821
+H015,Stonebridge Hospital,Stonebridge,13.0673,77.5744
+H016,Golden Fern Hospital,Golden Fern,12.9635,77.6139
+H017,Redwood District Hospital,Redwood,12.9088,77.6612
+H018,Clearwater General Hospital,Clearwater,13.0136,77.6097
+H019,Highland Mercy Hospital,Highland,13.0792,77.6315
+H020,Parkview Medical Center,Parkview,12.9394,77.6031
+H021,Brightwell Hospital,Brightwell,12.8921,77.5487
+H022,Oakridge Community Hospital,Oakridge,13.0345,77.6724
+H023,Westhaven Hospital,Westhaven,12.9678,77.5149
+H024,Springvale Medical Center,Springvale,12.9183,77.6942
+H025,Elmwood General Hospital,Elmwood,13.0567,77.5476
+H026,Coralcrest Hospital,Coralcrest,12.9731,77.6558
+H027,Juniper Hill Hospital,Juniper Hill,13.0914,77.6023
+H028,Southgate Medical Center,Southgate,12.8645,77.5967
+H029,Marigold Hospital,Marigold,12.9442,77.6991
+H030,Westfield Regional Hospital,Westfield,13.0227,77.5208

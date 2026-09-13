@@ -1,0 +1,181 @@
+date,hospital_id,medicine_id,medicine_name,daily_demand
+2026-01-01,H001,M001,Paracetamol 500mg,36
+2026-01-02,H001,M001,Paracetamol 500mg,41
+2026-01-03,H001,M001,Paracetamol 500mg,38
+2026-01-01,H001,M002,Amoxicillin 250mg,20
+2026-01-02,H001,M002,Amoxicillin 250mg,24
+2026-01-03,H001,M002,Amoxicillin 250mg,22
+2026-01-01,H002,M003,Insulin Regular 100IU,11
+2026-01-02,H002,M003,Insulin Regular 100IU,13
+2026-01-03,H002,M003,Insulin Regular 100IU,12
+2026-01-01,H002,M004,Ceftriaxone 1g,17
+2026-01-02,H002,M004,Ceftriaxone 1g,19
+2026-01-03,H002,M004,Ceftriaxone 1g,18
+2026-01-01,H003,M005,Azithromycin 500mg,14
+2026-01-02,H003,M005,Azithromycin 500mg,18
+2026-01-03,H003,M005,Azithromycin 500mg,16
+2026-01-01,H003,M006,Salbutamol Inhaler,13
+2026-01-02,H003,M006,Salbutamol Inhaler,15
+2026-01-03,H003,M006,Salbutamol Inhaler,14
+2026-01-01,H004,M007,Metformin 500mg,32
+2026-01-02,H004,M007,Metformin 500mg,36
+2026-01-03,H004,M007,Metformin 500mg,34
+2026-01-01,H004,M008,Amlodipine 5mg,18
+2026-01-02,H004,M008,Amlodipine 5mg,22
+2026-01-03,H004,M008,Amlodipine 5mg,20
+2026-01-01,H005,M009,Atorvastatin 20mg,16
+2026-01-02,H005,M009,Atorvastatin 20mg,20
+2026-01-03,H005,M009,Atorvastatin 20mg,18
+2026-01-01,H005,M010,Omeprazole 20mg,17
+2026-01-02,H005,M010,Omeprazole 20mg,21
+2026-01-03,H005,M010,Omeprazole 20mg,19
+2026-01-01,H006,M011,Artemether Lumefantrine,9
+2026-01-02,H006,M011,Artemether Lumefantrine,12
+2026-01-03,H006,M011,Artemether Lumefantrine,11
+2026-01-01,H006,M012,Oral Rehydration Salts,42
+2026-01-02,H006,M012,Oral Rehydration Salts,48
+2026-01-03,H006,M012,Oral Rehydration Salts,45
+2026-01-01,H007,M013,Enoxaparin 40mg,8
+2026-01-02,H007,M013,Enoxaparin 40mg,10
+2026-01-03,H007,M013,Enoxaparin 40mg,9
+2026-01-01,H007,M014,Morphine 10mg,4
+2026-01-02,H007,M014,Morphine 10mg,6
+2026-01-03,H007,M014,Morphine 10mg,5
+2026-01-01,H008,M015,Amoxicillin Clavulanate 625mg,18
+2026-01-02,H008,M015,Amoxicillin Clavulanate 625mg,22
+2026-01-03,H008,M015,Amoxicillin Clavulanate 625mg,20
+2026-01-01,H008,M001,Paracetamol 500mg,28
+2026-01-02,H008,M001,Paracetamol 500mg,32
+2026-01-03,H008,M001,Paracetamol 500mg,30
+2026-01-01,H009,M002,Amoxicillin 250mg,15
+2026-01-02,H009,M002,Amoxicillin 250mg,19
+2026-01-03,H009,M002,Amoxicillin 250mg,17
+2026-01-01,H009,M003,Insulin Regular 100IU,7
+2026-01-02,H009,M003,Insulin Regular 100IU,9
+2026-01-03,H009,M003,Insulin Regular 100IU,8
+2026-01-01,H010,M004,Ceftriaxone 1g,13
+2026-01-02,H010,M004,Ceftriaxone 1g,17
+2026-01-03,H010,M004,Ceftriaxone 1g,15
+2026-01-01,H010,M005,Azithromycin 500mg,10
+2026-01-02,H010,M005,Azithromycin 500mg,14
+2026-01-03,H010,M005,Azithromycin 500mg,12
+2026-01-01,H011,M006,Salbutamol Inhaler,11
+2026-01-02,H011,M006,Salbutamol Inhaler,15
+2026-01-03,H011,M006,Salbutamol Inhaler,13
+2026-01-01,H011,M007,Metformin 500mg,25
+2026-01-02,H011,M007,Metformin 500mg,29
+2026-01-03,H011,M007,Metformin 500mg,27
+2026-01-01,H012,M008,Amlodipine 5mg,14
+2026-01-02,H012,M008,Amlodipine 5mg,18
+2026-01-03,H012,M008,Amlodipine 5mg,16
+2026-01-01,H012,M009,Atorvastatin 20mg,13
+2026-01-02,H012,M009,Atorvastatin 20mg,17
+2026-01-03,H012,M009,Atorvastatin 20mg,15
+2026-01-01,H013,M010,Omeprazole 20mg,18
+2026-01-02,H013,M010,Omeprazole 20mg,24
+2026-01-03,H013,M010,Omeprazole 20mg,21
+2026-01-01,H013,M011,Artemether Lumefantrine,8
+2026-01-02,H013,M011,Artemether Lumefantrine,12
+2026-01-03,H013,M011,Artemether Lumefantrine,10
+2026-01-01,H014,M012,Oral Rehydration Salts,36
+2026-01-02,H014,M012,Oral Rehydration Salts,42
+2026-01-03,H014,M012,Oral Rehydration Salts,39
+2026-01-01,H014,M013,Enoxaparin 40mg,6
+2026-01-02,H014,M013,Enoxaparin 40mg,8
+2026-01-03,H014,M013,Enoxaparin 40mg,7
+2026-01-01,H015,M014,Morphine 10mg,3
+2026-01-02,H015,M014,Morphine 10mg,5
+2026-01-03,H015,M014,Morphine 10mg,4
+2026-01-01,H015,M015,Amoxicillin Clavulanate 625mg,14
+2026-01-02,H015,M015,Amoxicillin Clavulanate 625mg,18
+2026-01-03,H015,M015,Amoxicillin Clavulanate 625mg,16
+2026-01-01,H016,M001,Paracetamol 500mg,28
+2026-01-02,H016,M001,Paracetamol 500mg,34
+2026-01-03,H016,M001,Paracetamol 500mg,31
+2026-01-01,H016,M002,Amoxicillin 250mg,17
+2026-01-02,H016,M002,Amoxicillin 250mg,21
+2026-01-03,H016,M002,Amoxicillin 250mg,19
+2026-01-01,H017,M003,Insulin Regular 100IU,9
+2026-01-02,H017,M003,Insulin Regular 100IU,11
+2026-01-03,H017,M003,Insulin Regular 100IU,10
+2026-01-01,H017,M004,Ceftriaxone 1g,15
+2026-01-02,H017,M004,Ceftriaxone 1g,19
+2026-01-03,H017,M004,Ceftriaxone 1g,17
+2026-01-01,H018,M005,Azithromycin 500mg,12
+2026-01-02,H018,M005,Azithromycin 500mg,16
+2026-01-03,H018,M005,Azithromycin 500mg,14
+2026-01-01,H018,M006,Salbutamol Inhaler,10
+2026-01-02,H018,M006,Salbutamol Inhaler,14
+2026-01-03,H018,M006,Salbutamol Inhaler,12
+2026-01-01,H019,M007,Metformin 500mg,26
+2026-01-02,H019,M007,Metformin 500mg,32
+2026-01-03,H019,M007,Metformin 500mg,29
+2026-01-01,H019,M008,Amlodipine 5mg,16
+2026-01-02,H019,M008,Amlodipine 5mg,20
+2026-01-03,H019,M008,Amlodipine 5mg,18
+2026-01-01,H020,M009,Atorvastatin 20mg,15
+2026-01-02,H020,M009,Atorvastatin 20mg,19
+2026-01-03,H020,M009,Atorvastatin 20mg,17
+2026-01-01,H020,M010,Omeprazole 20mg,18
+2026-01-02,H020,M010,Omeprazole 20mg,22
+2026-01-03,H020,M010,Omeprazole 20mg,20
+2026-01-01,H021,M011,Artemether Lumefantrine,10
+2026-01-02,H021,M011,Artemether Lumefantrine,14
+2026-01-03,H021,M011,Artemether Lumefantrine,12
+2026-01-01,H021,M012,Oral Rehydration Salts,38
+2026-01-02,H021,M012,Oral Rehydration Salts,44
+2026-01-03,H021,M012,Oral Rehydration Salts,41
+2026-01-01,H022,M013,Enoxaparin 40mg,7
+2026-01-02,H022,M013,Enoxaparin 40mg,9
+2026-01-03,H022,M013,Enoxaparin 40mg,8
+2026-01-01,H022,M014,Morphine 10mg,4
+2026-01-02,H022,M014,Morphine 10mg,6
+2026-01-03,H022,M014,Morphine 10mg,5
+2026-01-01,H023,M015,Amoxicillin Clavulanate 625mg,16
+2026-01-02,H023,M015,Amoxicillin Clavulanate 625mg,20
+2026-01-03,H023,M015,Amoxicillin Clavulanate 625mg,18
+2026-01-01,H023,M001,Paracetamol 500mg,31
+2026-01-02,H023,M001,Paracetamol 500mg,35
+2026-01-03,H023,M001,Paracetamol 500mg,33
+2026-01-01,H024,M002,Amoxicillin 250mg,22
+2026-01-02,H024,M002,Amoxicillin 250mg,26
+2026-01-03,H024,M002,Amoxicillin 250mg,24
+2026-01-01,H024,M003,Insulin Regular 100IU,8
+2026-01-02,H024,M003,Insulin Regular 100IU,10
+2026-01-03,H024,M003,Insulin Regular 100IU,9
+2026-01-01,H025,M004,Ceftriaxone 1g,18
+2026-01-02,H025,M004,Ceftriaxone 1g,22
+2026-01-03,H025,M004,Ceftriaxone 1g,20
+2026-01-01,H025,M005,Azithromycin 500mg,11
+2026-01-02,H025,M005,Azithromycin 500mg,15
+2026-01-03,H025,M005,Azithromycin 500mg,13
+2026-01-01,H026,M006,Salbutamol Inhaler,13
+2026-01-02,H026,M006,Salbutamol Inhaler,17
+2026-01-03,H026,M006,Salbutamol Inhaler,15
+2026-01-01,H026,M007,Metformin 500mg,28
+2026-01-02,H026,M007,Metformin 500mg,32
+2026-01-03,H026,M007,Metformin 500mg,30
+2026-01-01,H027,M008,Amlodipine 5mg,17
+2026-01-02,H027,M008,Amlodipine 5mg,21
+2026-01-03,H027,M008,Amlodipine 5mg,19
+2026-01-01,H027,M009,Atorvastatin 20mg,14
+2026-01-02,H027,M009,Atorvastatin 20mg,18
+2026-01-03,H027,M009,Atorvastatin 20mg,16
+2026-01-01,H028,M010,Omeprazole 20mg,15
+2026-01-02,H028,M010,Omeprazole 20mg,21
+2026-01-03,H028,M010,Omeprazole 20mg,18
+2026-01-01,H028,M011,Artemether Lumefantrine,7
+2026-01-02,H028,M011,Artemether Lumefantrine,11
+2026-01-03,H028,M011,Artemether Lumefantrine,9
+2026-01-01,H029,M012,Oral Rehydration Salts,40
+2026-01-02,H029,M012,Oral Rehydration Salts,48
+2026-01-03,H029,M012,Oral Rehydration Salts,44
+2026-01-01,H029,M013,Enoxaparin 40mg,7
+2026-01-02,H029,M013,Enoxaparin 40mg,9
+2026-01-03,H029,M013,Enoxaparin 40mg,8
+2026-01-01,H030,M014,Morphine 10mg,3
+2026-01-02,H030,M014,Morphine 10mg,5
+2026-01-03,H030,M014,Morphine 10mg,4
+2026-01-01,H030,M015,Amoxicillin Clavulanate 625mg,19
+2026-01-02,H030,M015,Amoxicillin Clavulanate 625mg,23
+2026-01-03,H030,M015,Amoxicillin Clavulanate 625mg,21

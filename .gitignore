@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models and generated outputs
+*.pkl
+*.joblib
+models/*.bin
+
+# Node
+node_modules/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
