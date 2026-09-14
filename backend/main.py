@@ -5,9 +5,10 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 
 
 # Existing modules are also runnable as scripts, so make their imports work
@@ -17,6 +18,7 @@ if str(BACKEND_DIRECTORY) not in sys.path:
     sys.path.insert(0, str(BACKEND_DIRECTORY))
 
 from redistribution import generate_recommendations  # noqa: E402
+from ripple import simulate_ripple  # noqa: E402
 from shortage import analyze_shortage, get_critical_shortages  # noqa: E402
 
 
@@ -26,13 +28,22 @@ app = FastAPI(
     version="1.0.0",
 )
 
+
+class RippleSimulationRequest(BaseModel):
+    hospital_id: str
+    medicine_id: str
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "http://localhost:5175",
-        "http://127.0.0.1:5175",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:5177",
+        "http://127.0.0.1:5177",
+        "http://localhost:5178",
+        "http://127.0.0.1:5178",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -112,3 +123,12 @@ def summary():
         "safe_cases": int(status_counts.get("SAFE", 0)),
         "total_redistribution_recommendations": int(len(recommendations)),
     }
+
+
+@app.post("/ripple/simulate")
+def ripple_simulate(request: RippleSimulationRequest):
+    """Simulate a recommended transfer without changing inventory data."""
+    try:
+        return _json_value(simulate_ripple(request.hospital_id, request.medicine_id))
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc

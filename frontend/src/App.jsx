@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   Activity,
   AlertTriangle,
+  ArrowRight,
   ArrowDownToLine,
   ArrowUpRight,
   Boxes,
@@ -11,6 +12,7 @@ import {
   Hospital,
   MapPin,
   RefreshCw,
+  Send,
   ShieldAlert,
   Truck,
 } from "lucide-react";
@@ -176,6 +178,7 @@ function App() {
           <a className="active" href="#overview"><Activity size={16} /> Overview</a>
           <a href="#shortages"><ShieldAlert size={16} /> Shortage watch</a>
           <a href="#redistribution"><Truck size={16} /> Redistribution</a>
+          <a href="#ripple-simulator"><Send size={16} /> Ripple simulator</a>
         </nav>
         <div className="rail-footer">
           <div className="live-dot" />
@@ -269,6 +272,8 @@ function App() {
               <SectionHeading eyebrow="Network response" title="Redistribution recommendations" detail={`${recommendations.length} transfer paths ranked by urgency, surplus, and distance`} />
               <RecommendationTable rows={recommendations} />
             </section>
+
+            <RippleSimulator shortages={shortages} />
           </>
         )}
         <footer className="page-footer"><span><Droplets size={14} /> MedRipple</span><span>Synthetic hackathon prototype · No patient data</span>{lastUpdated && <span>Updated {lastUpdated.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>}</footer>
@@ -285,6 +290,118 @@ function ShortageTable({ rows, critical = false }) {
 function RecommendationTable({ rows }) {
   if (!rows.length) return <EmptyState>No redistribution recommendations available.</EmptyState>;
   return <div className="table-wrap"><table className="recommendation-table"><thead><tr><th>Destination</th><th>Medicine</th><th>Source</th><th>Shortage</th><th>Surplus</th><th>Transfer</th><th>Distance</th><th>Score</th><th>Reason</th></tr></thead><tbody>{rows.map((row, index) => <tr key={`${row.destination_hospital_id}-${row.medicine_id}-${row.source_hospital_id}-${index}`}><td><strong>{row.destination_hospital_id}</strong><span>{row.destination_hospital_name}</span></td><td>{row.medicine_name}</td><td><strong>{row.source_hospital_id}</strong><span>{row.source_hospital_name}</span></td><td className="numeric">{formatNumber(row.shortage_quantity)}</td><td className="numeric">{formatNumber(row.source_surplus)}</td><td className="numeric transfer-value">{formatNumber(row.recommended_transfer)}</td><td className="numeric">{row.distance_km == null ? "-" : `${formatNumber(row.distance_km)} km`}</td><td><span className="score-pill">{formatNumber(row.recommendation_score)}</span></td><td className="reason-cell">{row.reason}</td></tr>)}</tbody></table></div>;
+}
+
+function RippleSimulator({ shortages }) {
+  const [hospitalId, setHospitalId] = useState("");
+  const [medicineId, setMedicineId] = useState("");
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const hospitalOptions = useMemo(
+    () => [...new Map(shortages.map((row) => [row.hospital_id, row])).values()],
+    [shortages],
+  );
+  const medicineOptions = useMemo(
+    () => shortages.filter((row) => row.hospital_id === hospitalId),
+    [hospitalId, shortages],
+  );
+
+  async function simulate(event) {
+    event.preventDefault();
+    if (!hospitalId || !medicineId) {
+      setError("Select both a hospital and a medicine before simulating.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    setResult(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/ripple/simulate`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ hospital_id: hospitalId, medicine_id: medicineId }),
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.detail || "Ripple simulation failed.");
+      setResult(payload);
+    } catch (requestError) {
+      setError(requestError.message || "Unable to reach the ripple simulator.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <section className="ripple-page" id="ripple-simulator">
+      <div className="ripple-heading">
+        <div>
+          <p className="kicker">Network what-if analysis / 07</p>
+          <h1>Ripple Effect Simulator</h1>
+          <p className="subtitle">See how one medicine shortage can affect the wider hospital network.</p>
+        </div>
+      </div>
+
+      <form className="ripple-controls panel" onSubmit={simulate}>
+        <label>Hospital<select value={hospitalId} onChange={(event) => { setHospitalId(event.target.value); setMedicineId(""); setResult(null); setError(""); }}><option value="">Select hospital</option>{hospitalOptions.map((row) => <option key={row.hospital_id} value={row.hospital_id}>{row.hospital_id} · {row.hospital_name}</option>)}</select></label>
+        <label>Medicine<select value={medicineId} onChange={(event) => { setMedicineId(event.target.value); setResult(null); setError(""); }} disabled={!hospitalId}><option value="">Select medicine</option>{medicineOptions.map((row) => <option key={row.medicine_id} value={row.medicine_id}>{row.medicine_id} · {row.medicine_name}</option>)}</select></label>
+        <button className="refresh-button ripple-submit" type="submit" disabled={loading || !shortages.length}><Send size={15} /> {loading ? "Simulating..." : "Simulate Ripple Effect"}</button>
+      </form>
+
+      {error && <div className="api-error" role="alert"><AlertTriangle size={18} /> {error}</div>}
+      {result && <RippleResult result={result} />}
+    </section>
+  );
+}
+
+function RippleResult({ result }) {
+  const sourceStatus = result.source_hospital_status_after_transfer;
+  return (
+    <div className="ripple-result">
+      <div className="ripple-section panel">
+        <SectionHeading eyebrow="Section 1" title="Initial event" detail="The selected shortage before any transfer is simulated" />
+        <div className="ripple-metrics">
+          <Metric label="Affected hospital" value={`${result.affected_hospital} · ${result.affected_hospital_name}`} />
+          <Metric label="Medicine" value={`${result.medicine} · ${result.medicine_name}`} />
+          <Metric label="Current stock" value={`${formatNumber(result.current_stock)} units`} />
+          <Metric label="Predicted daily demand" value={`${formatNumber(result.predicted_daily_demand)} units`} />
+          <Metric label="Days until stockout" value={formatDays(result.days_until_stockout)} />
+          <Metric label="Risk score" value={formatNumber(result.initial_risk_score)} />
+          <Metric label="Shortage status" value={<StatusBadge status={result.initial_shortage_status} />} />
+        </div>
+      </div>
+
+      <div className="ripple-section panel">
+        <SectionHeading eyebrow="Section 2" title="Redistribution" detail="The highest-ranked existing transfer recommendation" />
+        <div className="ripple-metrics">
+          <Metric label="Source hospital" value={`${result.source_hospital} · ${result.source_hospital_name}`} />
+          <Metric label="Available surplus" value={`${formatNumber(result.available_surplus)} units`} />
+          <Metric label="Recommended transfer" value={`${formatNumber(result.recommended_transfer_quantity)} units`} />
+        </div>
+        <p className="ripple-reason">{result.reason}</p>
+      </div>
+
+      <div className="ripple-section panel">
+        <SectionHeading eyebrow="Section 3" title="Ripple effect" detail="A transparent view of the simulated network response" />
+        <div className="network-flow">
+          <div className="network-node affected"><strong>{result.affected_hospital}</strong><span>{result.affected_hospital_name}</span><StatusBadge status={result.initial_shortage_status} /></div>
+          <div className="network-transfer"><ArrowRight size={24} /><strong>{formatNumber(result.recommended_transfer_quantity)} units</strong><span>{result.medicine_name}</span></div>
+          <div className="network-node source"><strong>{result.source_hospital}</strong><span>{result.source_hospital_name}</span><StatusBadge status={sourceStatus} /></div>
+        </div>
+        <div className="ripple-steps"><span>Medicine shortage</span><ArrowRight size={14} /><span>Medicine transfer</span><ArrowRight size={14} /><span>Source risk recalculation</span></div>
+      </div>
+
+      <div className={`ripple-final ${result.final_ripple_status === "RIPPLE CONTAINED" ? "contained" : "potential"}`}>
+        <div><p className="eyebrow">Section 4 · Final result</p><h2>{result.final_ripple_status}</h2><p>{formatNumber(result.source_hospital_stock_after_simulated_transfer)} units remain at {result.source_hospital}; risk score recalculates to {formatNumber(result.source_hospital_risk_after_transfer)}.</p></div>
+      </div>
+    </div>
+  );
+}
+
+function Metric({ label, value }) {
+  return <div className="ripple-metric"><span>{label}</span><strong>{value}</strong></div>;
 }
 
 export default App;
