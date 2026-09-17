@@ -199,7 +199,7 @@ function App() {
           </button>
         </header>
 
-        {error && <div className="api-error" role="alert"><AlertTriangle size={18} /> Backend API is unavailable. Start the FastAPI server and refresh.</div>}
+        {error && <div className="api-error" role="alert"><AlertTriangle size={18} /> Unable to connect to the MedRipple API. Please refresh and try again.</div>}
         {loading && !summary ? <div className="loading-panel"><div className="loader" /> Loading dashboard data...</div> : (
           <>
             {priorityAlert && <section className="priority-alert" aria-label="Priority alert">
